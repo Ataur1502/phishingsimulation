@@ -1,0 +1,257 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<style>
+       
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: white;
+    color: #fdca40;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.signup-button {
+    background-color:hsl(170, 75%, 41%);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+}
+
+.signup-button:hover {
+    background-color:white;
+    color:black;
+}
+
+.content {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+.info-box {
+    padding: 20px;
+    border-radius: 5px;
+    width: 45%;
+}
+h2 {
+    text-align: center;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    
+
+}
+
+.info-box h1 {
+    font-family: Arial, Helvetica, sans-serif,sans-serif;
+    text-align: center;
+    font-size: 48px;
+    color: black;
+    
+    
+}
+
+.info-box p {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 30px;
+    text-align: center;
+    font-size: 30px;
+    color: black;
+    
+}
+
+.signin-box {
+    padding: 25px;
+    border-radius: 5px;
+    width: 50%;
+    padding-bottom: 10%;
+}
+
+
+
+.input-group {
+    margin-bottom: 30px;
+    text-align: center;
+}
+p {
+    text-align: center;
+    margin-top: 0%;
+}
+
+label {
+    display: block;
+}
+
+input {
+    width: 50%;
+    background-color: white;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-left: 25%;
+}
+
+button {
+    background-color: hsl(170, 75%, 41%);
+    width: 55% ;
+    color:white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    margin-left: 22%;
+    
+}
+
+button:hover {
+    background-color:hsl(170, 75%, 41%);
+    color:black;
+
+}
+
+body {
+    background-image: url("{% static 'images/hero-bg.svg' %}");
+}
+
+
+footer {
+    background-color: white;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    padding-top: 5px;
+}
+
+.copyright {
+    font-size: 30px;
+    padding: 20px;
+    font-family:Arial, Helvetica, sans-serif;
+    color: hsl(170, 75%, 41%);
+}
+
+.social-media {
+    display: flex;
+    padding: 20px;
+    gap: 30px;
+}
+
+.instagram,
+.twitter {
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+    color: #000;
+}
+
+.instagram:hover,
+.twitter:hover {
+    color: hsl(170, 75%, 41%);
+}
+.popup{
+    color:red;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+}
+
+</style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">
+            <img src="{% static 'images/logo.svg' %}" width="162" height="50" alt="EduWeb logo">
+        
+       <a href="/signup/" ><div class="signup-button">Sign Up</div></a>
+    </header>
+    {% if messages %}
+    <div id="popup" class="popup">
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    </div>
+{% endif %}
+    <div class="content">
+        <div class="info-box">
+            <h1>Welcome to Phishing Simulation!</h1>
+            <p>Test your organization's resilience with our advanced phishing simulation platform. Identify vulnerabilities, educate your team, and strengthen your defenses against real-world phishing attacks.</p>
+        </div>
+        
+        <div class="signin-box">
+           <h2>Log In</h2>
+            <form action="/signin/" method="post">
+                {% csrf_token %}
+                <div class="input-group">
+                    <input type="text" placeholder="Username" id="username" name="username" required>
+                </div>
+                
+                <div class="input-group">
+
+                    <input type="password" placeholder="Password" id="pass1" name="pass1" required>
+                </div>
+                
+                <div class="input-group">
+                <button  type="submit">Sign in</button>
+            </div>
+            <p>Not registred yet?<a href="/signup">SignUp</a></p>
+            </form>
+            <img src="{% static 'images/hero-shape-2.png' %}" width="622" height="551" alt="" class="shape hero-shape-2">
+        </div>
+    </div>
+    <footer>
+        <div class="copyright">© Phising Simulation.2024</div>
+        <div class="social-media">
+            <div class="instagram" onclick="insta()">Instagram</div>
+            <div class="twitter" onclick="twi()">Twitter</div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        var popup = document.getElementById('popup');
+
+        
+        if (popup) {
+            popup.style.display = 'block';
+
+
+            setTimeout(function () {
+                popup.style.display = 'none';
+            }, 5000);
+        }
+    });
+        function signup() {
+  location.replace("C:\\Users\\ataur\\header.html")
+}
+function insta(){
+  location.replace("https://www.instagram.com/")
+}
+        function twi(){
+  location.replace("https://twitter.com/")
+        }
+    </script>
+</body>
+</html>

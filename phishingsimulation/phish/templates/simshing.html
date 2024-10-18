@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vishing</title>
+  <link rel="shortcut icon" href="{% static 'favicon.svg' %}" type="image/svg+xml">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800&family=Poppins:wght@400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      background-color: #1ab69d;
+      padding: 20px 0;
+    }
+
+    header .logo img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    h2 {
+      font-family: 'League Spartan', sans-serif;
+      color: #151517;
+    }
+
+    ul {
+      list-style-type: disc;
+      margin-left: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #1ab69d;
+      color: white;
+    }
+
+    .Heading {
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+      padding-bottom: 50px;
+      padding-top: 150px;
+      font-size: 110px;
+    }
+
+    .Footer {
+      padding-top: 40px;
+    }
+
+    .video-container {
+      text-align: center;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header" data-header>
+    <div class="container">
+      <a href="#" class="logo">
+        <img src="{% static 'images/logo.svg' %}"  width="250" height="100" alt="EduWeb logo">
+      </a>
+
+      <nav class="navbar" data-navbar>
+        <div class="wrapper">
+          <a href="#" class="logo">
+            <img src="{% static 'images/logo.svg' %}"  width="162" height="50" alt="EduWeb logo">
+          </a>
+
+          <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+          </button>
+        </div>
+
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <a href="#home" class="navbar-link" data-nav-link>Home</a>
+          </li>
+          <li class="navbar-item">
+            <a href="#about" class="navbar-link" data-nav-link>About</a>
+          </li>
+          <li class="navbar-item">
+            <a href="#types" class="navbar-link" data-nav-link>Types</a>
+          </li>
+          <li class="navbar-item">
+            <a href="#blog" class="navbar-link" data-nav-link>Blog</a>
+          </li>
+          <li class="navbar-item">
+            <a href="#contact" class="navbar-link" data-nav-link>Contact</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#" class="btn has-before">
+          <span class="span">Try for free</span>
+          <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+        </a>
+
+        <button class="header-action-btn" aria-label="open menu" data-nav-toggler>
+          <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+        </button>
+      </div>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="Heading">
+        Vishing
+      </div>
+      <div class="container">
+        <h2>What is Vishing?</h2>
+        <p>Vishing, or voice phishing, is a type of social engineering attack where attackers use phone calls to trick individuals into revealing sensitive information. This can include personal identification information, bank account details, and passwords.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2>How It Works</h2>
+        <p>Attackers often impersonate legitimate organizations, such as banks or government agencies, and use various tactics to instill fear or urgency in their targets. They may use spoofed phone numbers to make it appear as though the call is coming from a trusted source.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2>How to Protect Yourself</h2>
+        <ul>
+          <li>Never provide personal information over the phone unless you initiated the call.</li>
+          <li>Verify the identity of the caller by calling back on a known number.</li>
+          <li>Be wary of calls that pressure you to act quickly.</li>
+          <li>Use call-blocking features on your phone.</li>
+          <li>Report any suspicious calls to your phone provider or relevant authorities.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Embedded YouTube Video Section -->
+    <section>
+      <div class="container">
+        <h2>Watch: Understanding Vishing</h2>
+        <div class="video-container">
+          <iframe width="100%" height="400" src="https://www.youtube.com/embed/Vp99hL22kMM" title="Understanding Vishing" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2>Why Is Vishing Dangerous?</h2>
+        <p>Vishing can lead to identity theft and financial loss, as attackers can gain access to sensitive information and use it for fraudulent activities. Victims may struggle to recover their identity and finances after falling victim to such attacks.</p>
+      </div>
+    </section>
+  </main>
+  
+  <div class="Footer">
+    <footer>
+      <div class="container">
+        <p>&copy; 2024 Phishing Simulation. All Rights Reserved.</p>
+      </div>
+    </footer>
+  </div>
+  
+  <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons.js"></script>
+</body>
+
+</html>
